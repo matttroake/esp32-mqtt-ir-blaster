@@ -1,0 +1,45 @@
+menu "IR Sender Configuration"
+
+config IRSENDER_WIFI_SSID
+    string "Wi-Fi SSID"
+    default "your-wifi-ssid"
+    help
+        Wi-Fi network used by the ESP32.
+
+config IRSENDER_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default "your-wifi-password"
+    help
+        Wi-Fi password used by the ESP32.
+
+config IRSENDER_MQTT_URI
+    string "MQTT broker URI"
+    default "mqtts://broker.example.com:8883"
+    help
+        MQTT broker URI. Both mqtt:// and mqtts:// are supported by ESP-MQTT.
+
+config IRSENDER_MQTT_USERNAME
+    string "MQTT username"
+    default ""
+
+config IRSENDER_MQTT_PASSWORD
+    string "MQTT password"
+    default ""
+
+config IRSENDER_DEVICE_ID
+    string "Device / rig identifier"
+    default "rig01"
+    help
+        Used in MQTT topics: irsender/<device>/...
+
+config IRSENDER_IR_TX_GPIO
+    int "IR transmitter GPIO"
+    range 0 39
+    default 12
+
+config IRSENDER_STATUS_LED_GPIO
+    int "Status LED GPIO"
+    range 0 39
+    default 27
+
+endmenu
